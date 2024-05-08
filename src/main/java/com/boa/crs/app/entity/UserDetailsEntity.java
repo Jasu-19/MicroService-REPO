@@ -37,6 +37,72 @@ public class UserDetailsEntity {
 	
 	@Column(name="VALID_USER")
 	private boolean isValid;
+
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getUseEmail() {
+		return useEmail;
+	}
+
+	public void setUseEmail(String useEmail) {
+		this.useEmail = useEmail;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public String getUserDepartment() {
+		return userDepartment;
+	}
+
+	public void setUserDepartment(String userDepartment) {
+		this.userDepartment = userDepartment;
+	}
+
+	public Date getUserDob() {
+		return userDob;
+	}
+
+	public void setUserDob(Date userDob) {
+		this.userDob = userDob;
+	}
+
+	public String getCourseAssocaited() {
+		return courseAssocaited;
+	}
+
+	public void setCourseAssocaited(String courseAssocaited) {
+		this.courseAssocaited = courseAssocaited;
+	}
+
+	public boolean isValid() {
+		return isValid;
+	}
+
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
+	
+	
 	
 	
 	

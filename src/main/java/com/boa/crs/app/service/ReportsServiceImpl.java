@@ -1,7 +1,6 @@
 package com.boa.crs.app.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,33 +12,22 @@ public class ReportsServiceImpl implements ReportsService {
 	@Autowired
 	GradesRepository gradesrepo;
 
-	@Override
-	public List<GradesEntity> generateReportForAll() {
-		return gradesrepo.findAll();
-		
-		
-	}
 
 	@Override
-	public GradesEntity viewgrade(Long StudentId) {
-		return gradesrepo.findById(StudentId).get();
-		// TODO Auto-generated method stub
-		
+	public List<GradesEntity> generateReport(Long studentId) {
+		return gradesrepo.findAllByStudentId(studentId);
 	}
+
 
 	@Override
-	public void assignGrade(Long StudentId, GradesEntity grade) {
-		// TODO Auto-generated method stub
-		Optional<GradesEntity> grades = gradesrepo.findById(StudentId);
-		if(grades.isPresent())
-		{
-			gradesrepo.save(grade);
-		}
-		
+	public GradesEntity viewgrade(Long studentId, Long courseId) {
+		return gradesrepo.findByStudentIdAndCourseID(studentId,courseId);
 	}
 
-	
-	// Generate Report // Admin
-	// Assign Grade :-- Professor
-	// View Grad  :-- Student 
+
+	@Override
+	public void assignGrade(GradesEntity grade) {
+		gradesrepo.save(grade);
+	}
+
 }

@@ -23,6 +23,30 @@ public class UserEntity {
 	
      @Column(name = "TYPE")
 	private String userType ;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public UserDetailsEntity getUserEntity() {
+		return userEntity;
+	}
+
+	public void setUserEntity(UserDetailsEntity userEntity) {
+		this.userEntity = userEntity;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 	
 	
 

@@ -22,10 +22,10 @@ public class PaymentServiceImpl implements PaymentService {
 	}
 
 	@Override
-	public void updatePayment(Long PaymentId, PaymentDetailsEntity Payment) {
-		PaymentDetailsEntity PaymentExists = PaymentRepository.findById(PaymentId).get();
+	public void updatePayment(PaymentDetailsEntity paymentDetailsEntity) {
+		PaymentDetailsEntity PaymentExists = PaymentRepository.findById(paymentDetailsEntity.getTransactionId()).get();
 		if(null != PaymentExists) {
-			PaymentRepository.save(Payment);
+			PaymentRepository.save(paymentDetailsEntity);
 		}
 		
 	}

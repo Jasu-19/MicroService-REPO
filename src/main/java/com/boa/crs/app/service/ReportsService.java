@@ -6,9 +6,9 @@ import com.boa.crs.app.entity.GradesEntity;
 
 public interface ReportsService {
 	
-	public List<GradesEntity> generateReportForAll();
-	public GradesEntity viewgrade(Long StudentId);
-	public void assignGrade(Long StudentId, GradesEntity grade);
+	public List<GradesEntity> generateReport(Long studentId);
+	public GradesEntity viewgrade(Long studentId,Long courseId);
+	public void assignGrade(GradesEntity grade);
 
 
 }
