@@ -9,4 +9,4 @@ import com.boa.crs.app.entity.PaymentDetailsEntity;
 @Repository
 public interface PaymentDetailsRepository extends JpaRepository<PaymentDetailsEntity, Long>{
 		
-	}
+}

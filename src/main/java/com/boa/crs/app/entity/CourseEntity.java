@@ -35,6 +35,13 @@ public class CourseEntity {
 	@CreationTimestamp
 	@Column(name="CREATED_DATE")
 	private Date createdDate;
+	
+	@Column(name= "COURSE_DETAILS")
+	private String courseDetails;
+	
+	
+	@Column(name = "COURSE_AMOUNT")
+	private int Amount;
 
 	
 	

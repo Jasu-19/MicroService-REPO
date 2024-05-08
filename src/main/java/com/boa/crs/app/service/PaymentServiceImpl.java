@@ -1,11 +1,41 @@
 package com.boa.crs.app.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.boa.crs.app.entity.PaymentDetailsEntity;
+import com.boa.crs.app.repo.PaymentDetailsRepository;
 
 public class PaymentServiceImpl implements PaymentService {
 
 	
 	// You need to take only debit card / credit / UI Details 
-	// based on course selction calculate the payment // generate TX id 
+	// based on Payment selction calculate the payment // generate TX id 
 	// Store in DB
+	
+	@Autowired
+	PaymentDetailsRepository PaymentRepository;
+
+	@Override
+	public void addPayment(PaymentDetailsEntity Payment) {
+		PaymentRepository.save(Payment);
+		
+	}
+
+	@Override
+	public void updatePayment(Long PaymentId, PaymentDetailsEntity Payment) {
+		PaymentDetailsEntity PaymentExists = PaymentRepository.findById(PaymentId).get();
+		if(null != PaymentExists) {
+			PaymentRepository.save(Payment);
+		}
+		
+	}
+
+	@Override
+	public void removePayment(Long PaymentId) {
+		PaymentDetailsEntity PaymentExists = PaymentRepository.findById(PaymentId).get();
+		if(null != PaymentExists) {
+			PaymentRepository.deleteById(PaymentId);
+		}
+		
+	}
 }

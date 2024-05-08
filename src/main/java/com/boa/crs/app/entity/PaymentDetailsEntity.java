@@ -17,6 +17,9 @@ public class PaymentDetailsEntity {
 	@Column(name="PAYMENT_MODE")
 	private String paymentMode;
 	
+	@Column(name="PAYMENT_STATUS")
+	private String paymentStatus;
+	
 	@Column(name="PAYMENT_TYPE")
 	private String paymentType;
 	
